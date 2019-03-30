@@ -1,0 +1,5 @@
+/client/node_modules
+/app/__pycache__
+/trackers/__pycache__
+/users/__pycache__
+/service-account.json
