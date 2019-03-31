@@ -1,4 +1,4 @@
 /client/node_modules
 __pycache__/
-.sqlite3
 /service-account.json
+/app/db.sqlite3
