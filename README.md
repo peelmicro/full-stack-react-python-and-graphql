@@ -4,7 +4,20 @@ Source code for the `Full-Stack React, Python, and GraphQL` [Udemy](https://www.
 
 ## How to Use
 
-### To run the `Api` project execute
+### To run the `python` project execute
+
+1. Execute the `pipenv` shell
+
+```bash
+pipenv shell
+```
+
+2. Execute the server in port 9000 (change the port to the one you want or leave it blank to use port 8000)
+
+```bash
+cd app
+python manage.py runserver 9000
+```
 
 ### To run the `react` client project execute
 
