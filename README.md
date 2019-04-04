@@ -21,6 +21,11 @@ python manage.py runserver 9000
 
 ### To run the `react` client project execute
 
+```bash
+cd client
+yarn start
+```
+
 ## Follow the course
 
 Follow the course on https://www.udemy.com/full-stack-react-python-and-graphql/
