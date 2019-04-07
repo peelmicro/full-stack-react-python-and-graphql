@@ -19,7 +19,7 @@ cd app
 python manage.py runserver 9000
 ```
 
-### To run the `react` client project execute
+### To run the `react` client project execute on other terminal window
 
 ```bash
 cd client
