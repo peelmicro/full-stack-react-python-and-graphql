@@ -10,22 +10,24 @@ import Header from "./components/Shared/Header";
 import Loading from "./components/Shared/Loading";
 import Error from "./components/Shared/Error";
 
+export const UserContext = React.createContext();
+
 const Root = () => (
   <Query query={ME_QUERY}>
     {({ data, loading, error }) => {
       if (loading) return <Loading />;
       if (error) return <Error error={error} />;
       const currentUser = data.me;
-
+      console.log(currentUser);
       return (
         <Router>
-          <>
+          <UserContext.Provider value={currentUser}>
             <Header currentUser={currentUser} />
             <Switch>
               <Route exact path="/" component={App} />
               <Route path="/profile/:id" component={Profile} />
             </Switch>
-          </>
+          </UserContext.Provider>
         </Router>
       );
     }}
