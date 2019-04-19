@@ -18,7 +18,6 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 
-import { GET_TRACKS_QUERY } from "../../pages/App";
 import { UserContext } from "../../Root";
 import Error from "../Shared/Error";
 

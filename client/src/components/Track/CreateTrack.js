@@ -58,6 +58,12 @@ const CreateTrack = ({ classes }) => {
     }
   };
 
+  const handleUpdateCache = (cache, { data: { createTrack } }) => {
+    const data = cache.readQuery({ query: GET_TRACKS_QUERY });
+    const tracks = data.tracks.concat(createTrack.track);
+    cache.writeQuery({ query: GET_TRACKS_QUERY, data: { tracks } });
+  };
+
   const handleSubmit = async (event, createTrack) => {
     event.preventDefault();
     setSubmitting(true);
@@ -88,7 +94,8 @@ const CreateTrack = ({ classes }) => {
           setDescription("");
           setFile("");
         }}
-        refetchQueries={() => [{ query: GET_TRACKS_QUERY }]}
+        update={handleUpdateCache}
+        // refetchQueries={() => [{ query: GET_TRACKS_QUERY }]}
       >
         {(createTrack, { loading, error }) => {
           if (error) return <Error error={error} />;
@@ -187,6 +194,13 @@ const CREATE_TRACK_MUTATION = gql`
         title
         description
         url
+        likes {
+          id
+        }
+        postedBy {
+          id
+          username
+        }
       }
     }
   }
